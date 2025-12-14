@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cindy's Story</title>
 
-  <!-- Y2K / 하이틴 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
@@ -14,18 +13,29 @@
 </head>
 <body>
 
+<!-- sparkle layer -->
+<div id="sparkle-layer"></div>
+
 <header class="top">
   <div class="brand">
     <span class="badge">★</span>
     <h1>Cindy's Story</h1>
     <p class="sub">Highteen · Y2K · Personal Archive</p>
   </div>
+
+  <!-- 상단 네비 -->
+  <nav class="nav">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#study">Study</a>
+    <a href="#project">Project</a>
+  </nav>
 </header>
 
 <main class="wrap">
 
-  <!-- About Me -->
-  <section class="card tape">
+  <!-- About -->
+  <section id="about" class="card tape">
     <h2>🌸 About Me</h2>
 
     <p>
@@ -47,15 +57,14 @@
     </ul>
   </section>
 
-  <!-- Grid -->
   <section class="grid">
 
-    <article class="card">
+    <article id="work" class="card">
       <h3>💼 Work Timeline</h3>
       <p>금융업 종사자<br>(2017.05.02 ~ ing)</p>
     </article>
 
-    <article class="card">
+    <article id="study" class="card">
       <h3>📚 Study Timeline</h3>
       <ul class="list-inside">
         <li>상업고등학교 졸업</li>
@@ -92,7 +101,7 @@
       </ul>
     </article>
 
-    <article class="card highlight">
+    <article id="project" class="card highlight">
       <h3>🚀 Project (과제제출건)</h3>
       <a class="project-link" href="https://chatgpt.com/g/g-XXXXXXXX" target="_blank">
         배가 G.P.T
@@ -106,5 +115,6 @@
 
 </main>
 
+<script src="app.js"></script>
 </body>
 </html>
