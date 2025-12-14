@@ -8,8 +8,9 @@
   --shadow: 0 18px 35px rgba(0,0,0,.14);
 }
 
-/* reset */
 * { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -24,11 +25,23 @@ body {
   background-size: auto, auto, auto, 18px 18px, auto;
 }
 
+/* sparkle */
+#sparkle-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
 /* header */
 .top {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 36px 24px 10px;
+  padding: 30px 24px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
 }
 
 .brand h1 {
@@ -49,9 +62,26 @@ body {
   box-shadow: var(--shadow);
 }
 
-.sub {
-  margin-top: 8px;
-  color: var(--muted);
+.sub { margin-top: 8px; color: var(--muted); }
+
+/* nav */
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(0,0,0,.08);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.nav a:hover {
+  background: rgba(255,95,162,.15);
 }
 
 /* layout */
@@ -85,7 +115,6 @@ body {
   transform: rotate(-8deg);
 }
 
-/* tape */
 .tape::before {
   content: "";
   position: absolute;
@@ -169,11 +198,6 @@ p {
   text-decoration: none;
 }
 
-.project-link::before {
-  content: "✦";
-}
+.project-link::before { content: "✦"; }
 
-.small {
-  font-size: 13px;
-  color: var(--muted);
-}
+.small { font-size: 13px; color: var(--muted); }
