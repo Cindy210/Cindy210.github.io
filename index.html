@@ -13,46 +13,33 @@
 </head>
 <body>
 
-<!-- FX layers -->
 <div id="sparkle-layer"></div>
-<div id="pop-layer" aria-hidden="true"></div>
+<div id="pop-layer"></div>
 
-<!-- 좌측 상단 메뉴 버튼 -->
-<button class="menu-btn" id="menuBtn" aria-label="카테고리 열기" aria-controls="drawer" aria-expanded="false">☰</button>
+<button class="menu-btn" id="menuBtn">☰</button>
 
-<!-- Drawer -->
-<aside class="drawer" id="drawer" aria-hidden="true">
+<aside class="drawer" id="drawer">
   <div class="drawer-top">
     <div class="drawer-title">Cindy's Menu</div>
-    <button class="drawer-close" id="drawerClose" aria-label="닫기">✕</button>
+    <button class="drawer-close" id="drawerClose">✕</button>
   </div>
 
-  <!-- 검색/필터 -->
   <div class="drawer-search">
-    <input id="drawerSearch" type="search" placeholder="검색 (예: 업무, 관심사, Project)" aria-label="메뉴 검색" />
-    <button class="drawer-clear" id="drawerClear" type="button" aria-label="검색어 지우기">↺</button>
+    <input id="drawerSearch" type="search" placeholder="검색" />
+    <button id="drawerClear">↺</button>
   </div>
 
-  <!-- No results -->
   <div class="drawer-empty" id="drawerEmpty" hidden>No results</div>
 
-  <div class="drawer-group">
-    <div class="drawer-label">Navigate</div>
-    <nav class="drawer-nav">
-      <a href="#about" class="drawer-link" data-link>About</a>
-      <a href="#work" class="drawer-link" data-link>Work</a>
-      <a href="#study" class="drawer-link" data-link>Study</a>
-    </nav>
-  </div>
-
-  <div class="drawer-group">
-    <div class="drawer-label">Category</div>
-    <nav class="drawer-nav">
-      <a href="#tasks" class="drawer-link" data-link>주요 업무</a>
-      <a href="#interests" class="drawer-link" data-link>주요 관심사</a>
-      <a href="#project" class="drawer-link" data-link>Project</a>
-    </nav>
-  </div>
+  <nav class="drawer-nav">
+    <a href="#about" data-link>About</a>
+    <a href="#work" data-link>Work</a>
+    <a href="#study" data-link>Study</a>
+    <a href="#tasks" data-link>주요 업무</a>
+    <a href="#interests" data-link>주요 관심사</a>
+    <a href="#project" data-link>Project</a>
+    <a href="#future" data-link>앞으로의 계획</a>
+  </nav>
 </aside>
 
 <div class="backdrop" id="backdrop" hidden></div>
@@ -61,94 +48,104 @@
   <div class="brand">
     <span class="badge">★</span>
     <h1>Cindy's Story</h1>
-    <p class="sub">Hip · Kitsch · Blue / Pink / White</p>
   </div>
 
-  <!-- 상단 네비 (모바일에서는 숨김 → Drawer 사용) -->
-  <nav class="nav" aria-label="페이지 이동">
-    <a class="nav-link" href="#about" data-link>About</a>
-    <a class="nav-link" href="#work" data-link>Work</a>
-    <a class="nav-link" href="#study" data-link>Study</a>
-    <a class="nav-link" href="#project" data-link>Project</a>
+  <nav class="nav">
+    <a href="#about" data-link>About</a>
+    <a href="#work" data-link>Work</a>
+    <a href="#study" data-link>Study</a>
+    <a href="#project" data-link>Project</a>
   </nav>
 </header>
 
 <main class="wrap">
 
-  <!-- About -->
-  <section id="about" class="card tape reveal" data-section>
-    <h2>🌸 About Me</h2>
+<section id="about" class="card tape reveal" data-section>
+  <h2>🌸 About Me</h2>
+  <p class="lead">
+    Name : Cindy, 박수진<br>
+    Address : 서울시 용산구 한남<br>
+    e-mail : 12401660@iscu.or.kr<br>
+    phone : 010-1234-5678<br><br>
 
-    <p class="lead">
-      Name : Cindy, 박수진<br>
-      Address : 서울시 용산구 한남<br>
-      e-mail : 12401660@iscu.or.kr<br>
-      phone : 010-1234-5678<br><br>
+    금융과 기술의 교차점에서 문제를 분석하고 구조화하는 것을 좋아합니다.<br>
+    영원히 철들고 싶지 않은 어른이의 끝나지 않을 무한한 도전입니다.
+  </p>
 
-      금융과 기술의 교차점에서 문제를 분석하고, 구조화하는 것을 좋아합니다.<br>
-      영원히 철들고 싶지 않은 어른이의 끝나지 않을 무한한 도전입니다.
-    </p>
+  <ul class="chips">
+    <li>금융</li>
+    <li>정보보안</li>
+    <li>CSS</li>
+    <li>데이터분석</li>
+    <li>정보처리</li>
+  </ul>
+</section>
 
-    <ul class="chips">
-      <li>금융</li>
-      <li>정보보안</li>
-      <li>CSS</li>
-      <li>데이터분석</li>
-      <li>정보처리</li>
+<section class="grid">
+  <article id="work" class="card reveal" data-section>
+    <h3>💼 Work Timeline</h3>
+    <p>금융업 종사자<br>(2017.05.02 ~ ing)</p>
+  </article>
+
+  <article id="study" class="card reveal" data-section>
+    <h3>📚 Study Timeline</h3>
+    <ul class="list-inside">
+      <li>상업고등학교 졸업</li>
+      <li>공대(전문대) 졸업</li>
+      <li>서울사이버대학교 졸업예정 (2026.02)</li>
+      <li>성균관대학교 과학수사학과 준비중</li>
     </ul>
-  </section>
+  </article>
+</section>
 
-  <!-- Work/Study만 그리드 -->
-  <section class="grid">
-    <article id="work" class="card reveal" data-section>
-      <h3>💼 Work Timeline</h3>
-      <p>금융업 종사자<br>(2017.05.02 ~ ing)</p>
-    </article>
+<section id="tasks" class="card wide reveal" data-section>
+  <h2>🗂 주요 업무</h2>
+  <ul class="tagline icon-random">
+    <li>보이스피싱 전담</li>
+    <li>창구</li>
+    <li>총무</li>
+    <li>회계 / 재무</li>
+    <li>예산수립 및 집행</li>
+    <li>디자인</li>
+    <li>이벤트 및 행사 기획·진행</li>
+    <li>컨설팅</li>
+  </ul>
+</section>
 
-    <article id="study" class="card reveal" data-section>
-      <h3>📚 Study Timeline</h3>
-      <ul class="list-inside">
-        <li>상업고등학교 졸업</li>
-        <li>공대(전문대) 졸업</li>
-        <li>서울사이버대학교 졸업예정 (2026.02)</li>
-        <li>성균관대학교(대학원) 과학수사 전공 준비중</li>
-      </ul>
-    </article>
-  </section>
+<section id="interests" class="card wide reveal" data-section>
+  <h2>💡 주요 관심사</h2>
+  <ul class="tagline icon-random">
+    <li>빅데이터</li>
+    <li>정보보안</li>
+    <li>포렌식</li>
+    <li>해킹</li>
+    <li>과학수사</li>
+    <li>경찰</li>
+    <li>형법 / 형소법</li>
+  </ul>
+</section>
 
-  <!-- 가로 섹션(스크롤 등장 + 모바일 카드화 + 아이콘 랜덤) -->
-  <section id="tasks" class="card wide reveal" data-section>
-    <h2>🗂 주요 업무</h2>
-    <ul class="tagline icon-random">
-      <li>보이스피싱 전담</li>
-      <li>창구</li>
-      <li>총무</li>
-      <li>회계 / 재무</li>
-      <li>예산수립 및 집행</li>
-      <li>디자인</li>
-      <li>이벤트 및 행사 기획·진행</li>
-      <li>컨설팅</li>
-    </ul>
-  </section>
+<section id="project" class="card wide highlight reveal" data-section>
+  <h2>🚀 Project (과제제출건)</h2>
+  <a class="project-link"
+     href="https://chatgpt.com/g/g-680e1e05c594819190e2f88d971f9de6-baega-g-p-t"
+     target="_blank" rel="noreferrer">
+     배가 G.P.T
+  </a>
+  <p class="small">
+    ChatGPT Custom GPT 프로젝트<br>
+    분위기, 장소, 사람, 알러지 등을 고려한 음식 추천 서비스
+  </p>
+</section>
 
-  <section id="interests" class="card wide reveal" data-section>
-    <h2>💡 주요 관심사</h2>
-    <ul class="tagline icon-random">
-      <li>빅데이터</li>
-      <li>정보보안</li>
-      <li>포렌식</li>
-      <li>해킹</li>
-      <li>과학수사</li>
-      <li>경찰</li>
-      <li>형법 / 형소법</li>
-    </ul>
-  </section>
-
-  <section id="project" class="card wide highlight reveal" data-section>
-    <h2>🚀 Project (과제제출건)</h2>
-    <a class="project-link" href="https://chatgpt.com/g/g-680e1e05c594819190e2f88d971f9de6-baega-g-p-t" target="_blank" rel="noreferrer">배가 G.P.T</a>
-    <p class="small">분위기, 장소, 사람, 알러지 등을 고려한 음식 추천</p>
-  </section>
+<section id="future" class="card wide reveal" data-section>
+  <h2>🧭 앞으로의 계획 / 목표</h2>
+  <ul class="future-grid">
+    <li class="future-item"><span>01</span> 대학원 진학 (석사 / 박사 과정)</li>
+    <li class="future-item"><span>02</span> 법률 지식 기반 프로젝트 개발</li>
+    <li class="future-item"><span>03</span> 법률 관련 홈페이지 또는 App 개발</li>
+  </ul>
+</section>
 
 </main>
 
