@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Highteen GitHub 과제</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="badge">★</span>
+      <h1>My Highteen Lab</h1>
+      <p class="sub">GitHub Pages로 배포되는 컴공 과제용 정적 웹</p>
+    </div>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#guestbook">Guestbook</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section id="about" class="card tape">
+      <h2>🌸 About Me</h2>
+      <p>
+        하이틴 감성으로 꾸민 과제 페이지입니다. 구조(HTML), 스타일(CSS), 동작(JS)을 분리했습니다.
+      </p>
+      <ul class="chips" aria-label="기술 태그">
+        <li>HTML</li><li>CSS</li><li>JS</li><li>Responsive</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="grid">
+      <article class="card">
+        <h3>💖 Project 01</h3>
+        <p>카드형 UI + hover 인터랙션</p>
+        <button class="btn" data-toast="Project 01 클릭!">Open</button>
+      </article>
+
+      <article class="card">
+        <h3>✨ Project 02</h3>
+        <p>모달/토스트 같은 작은 컴포넌트</p>
+        <button class="btn" data-toast="Project 02 클릭!">Open</button>
+      </article>
+
+      <article class="card">
+        <h3>🧁 Project 03</h3>
+        <p>접근성(aria)와 반응형 레이아웃</p>
+        <button class="btn" data-toast="Project 03 클릭!">Open</button>
+      </article>
+    </section>
+
+    <section id="guestbook" class="card">
+      <h2>📓 Mini Guestbook</h2>
+      <form id="form" class="form" autocomplete="off">
+        <label>
+          닉네임
+          <input id="name" required maxlength="12" placeholder="예: 배가GPT" />
+        </label>
+        <label>
+          한마디
+          <input id="msg" required maxlength="40" placeholder="하이틴 감성 한 줄!" />
+        </label>
+        <button class="btn primary" type="submit">남기기</button>
+      </form>
+      <ul id="list" class="list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
