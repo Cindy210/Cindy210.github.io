@@ -3,78 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Highteen GitHub 과제</title>
+  <title>Cindy's Story</title>
+
+  <!-- Y2K / 하이틴 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header class="top">
     <div class="brand">
       <span class="badge">★</span>
-      <h1>My Highteen Lab</h1>
-      <p class="sub">GitHub Pages로 배포되는 컴공 과제용 정적 웹</p>
+      <h1>Cindy's story</h1>
+      <p class="sub">Highteen · Y2K · Personal Archive</p>
     </div>
-
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#guestbook">Guestbook</a>
-    </nav>
   </header>
 
   <main class="wrap">
-    <section id="about" class="card tape">
+
+    <!-- About Me -->
+    <section class="card tape">
       <h2>🌸 About Me</h2>
       <p>
-        빅데이터/정보보호학과 4학년 박수진입니다.
-        현재 재직중이며, 전공과목과 무관한 금융업 종사자입니다.
-        편입 전부터 컴공 전공이었으며, 학업에 대한 꿈을 계속 펼치기 위하여 매일 도전하고 있습니다.
+        금융과 기술의 교차점에서 문제를 분석하고, 구조화하는 것을 좋아합니다.
       </p>
-      <ul class="chips" aria-label="기술 태그">
-        <li>HTML</li><li>CSS</li><li>JS</li><li>Responsive</li>
+      <ul class="chips">
+        <li>금융</li>
+        <li>정보보안</li>
+        <li>CSS</li>
+        <li>데이터분석</li>
+        <li>정보처리</li>
       </ul>
     </section>
 
-    <section id="projects" class="grid">
+    <!-- Projects / Timeline -->
+    <section class="grid">
+
       <article class="card">
-        <h3>💖 Project 01</h3>
-        <p>카드형 UI + hover 인터랙션</p>
-        <button class="btn" data-toast="Project 01 클릭!">Open</button>
+        <h3>💼 Work Timeline</h3>
+        <p>금융업 종사자<br>(2017.05.02 ~ ing)</p>
       </article>
 
       <article class="card">
-        <h3>✨ Project 02</h3>
-        <p>모달/토스트 같은 작은 컴포넌트</p>
-        <button class="btn" data-toast="Project 02 클릭!">Open</button>
+        <h3>📚 Study Timeline</h3>
+        <ul class="list-inside">
+          <li>① 상업고등학교 졸업</li>
+          <li>② 공대(전문대) 졸업</li>
+          <li>③ 서울사이버대학교 졸업예정 (2026.02)</li>
+          <li>④ 성균관대학교 과학수사학과 준비중</li>
+        </ul>
       </article>
 
       <article class="card">
-        <h3>🧁 Project 03</h3>
-        <p>접근성(aria)와 반응형 레이아웃</p>
-        <button class="btn" data-toast="Project 03 클릭!">Open</button>
+        <h3>🗂 주요 업무</h3>
+        <ul class="list-inside">
+          <li>① 보이스피싱 전담</li>
+          <li>② 창구</li>
+          <li>③ 총무</li>
+          <li>④ 회계 / 재무</li>
+          <li>⑤ 예산수립 및 집행</li>
+          <li>⑦ 디자인</li>
+          <li>⑧ 이벤트·행사 기획 및 진행</li>
+          <li>⑨ 컨설팅</li>
+        </ul>
       </article>
+
+      <article class="card">
+        <h3>💡 주요 관심사</h3>
+        <ul class="list-inside">
+          <li>① 빅데이터</li>
+          <li>② 정보보안</li>
+          <li>③ 포렌식</li>
+          <li>④ 해킹</li>
+          <li>⑤ 과학수사</li>
+          <li>⑥ 경찰</li>
+          <li>⑧ 형법 / 형소법</li>
+        </ul>
+      </article>
+
+      <article class="card highlight">
+        <h3>🚀 Project (과제제출건)</h3>
+        <a class="project-link" href="https://chatgpt.com/g/g-XXXXXXXX" target="_blank">
+          배가 G.P.T
+        </a>
+        <p class="small">
+          분위기, 장소, 사람, 알러지 등을 고려한 음식 추천
+        </p>
+      </article>
+
     </section>
 
-    <section id="guestbook" class="card">
-      <h2>📓 Mini Guestbook</h2>
-      <form id="form" class="form" autocomplete="off">
-        <label>
-          닉네임
-          <input id="name" required maxlength="12" placeholder="예: 배가GPT" />
-        </label>
-        <label>
-          한마디
-          <input id="msg" required maxlength="40" placeholder="하이틴 감성 한 줄!" />
-        </label>
-        <button class="btn primary" type="submit">남기기</button>
-      </form>
-      <ul id="list" class="list" aria-live="polite"></ul>
-    </section>
   </main>
 
-  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-  <script src="app.js"></script>
 </body>
 </html>
