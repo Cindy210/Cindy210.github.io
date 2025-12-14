@@ -13,32 +13,73 @@
 </head>
 <body>
 
-<!-- sparkle layer -->
+<!-- FX layers -->
 <div id="sparkle-layer"></div>
+<div id="pop-layer" aria-hidden="true"></div>
+
+<!-- 좌측 상단 메뉴 버튼 -->
+<button class="menu-btn" id="menuBtn" aria-label="카테고리 열기" aria-controls="drawer" aria-expanded="false">☰</button>
+
+<!-- Drawer -->
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-top">
+    <div class="drawer-title">Cindy's Menu</div>
+    <button class="drawer-close" id="drawerClose" aria-label="닫기">✕</button>
+  </div>
+
+  <!-- 검색/필터 -->
+  <div class="drawer-search">
+    <input id="drawerSearch" type="search" placeholder="검색 (예: 업무, 관심사, Project)" aria-label="메뉴 검색" />
+    <button class="drawer-clear" id="drawerClear" type="button" aria-label="검색어 지우기">↺</button>
+  </div>
+
+  <!-- No results -->
+  <div class="drawer-empty" id="drawerEmpty" hidden>No results</div>
+
+  <div class="drawer-group">
+    <div class="drawer-label">Navigate</div>
+    <nav class="drawer-nav">
+      <a href="#about" class="drawer-link" data-link>About</a>
+      <a href="#work" class="drawer-link" data-link>Work</a>
+      <a href="#study" class="drawer-link" data-link>Study</a>
+    </nav>
+  </div>
+
+  <div class="drawer-group">
+    <div class="drawer-label">Category</div>
+    <nav class="drawer-nav">
+      <a href="#tasks" class="drawer-link" data-link>주요 업무</a>
+      <a href="#interests" class="drawer-link" data-link>주요 관심사</a>
+      <a href="#project" class="drawer-link" data-link>Project</a>
+    </nav>
+  </div>
+</aside>
+
+<div class="backdrop" id="backdrop" hidden></div>
 
 <header class="top">
   <div class="brand">
     <span class="badge">★</span>
     <h1>Cindy's Story</h1>
-    <p class="sub">Highteen · Y2K · Personal Archive</p>
+    <p class="sub">Hip · Kitsch · Blue / Pink / White</p>
   </div>
 
-  <!-- 상단 네비 -->
-  <nav class="nav">
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#study">Study</a>
-    <a href="#project">Project</a>
+  <!-- 상단 네비 (모바일에서는 숨김 → Drawer 사용) -->
+  <nav class="nav" aria-label="페이지 이동">
+    <a class="nav-link" href="#about" data-link>About</a>
+    <a class="nav-link" href="#work" data-link>Work</a>
+    <a class="nav-link" href="#study" data-link>Study</a>
+    <a class="nav-link" href="#project" data-link>Project</a>
   </nav>
 </header>
 
 <main class="wrap">
 
   <!-- About -->
-  <section id="about" class="card tape">
+  <section id="about" class="card tape reveal" data-section>
     <h2>🌸 About Me</h2>
 
-    <p>
+    <p class="lead">
       Name : Cindy, 박수진<br>
       Address : 서울시 용산구 한남<br>
       e-mail : 12401660@iscu.or.kr<br>
@@ -57,14 +98,14 @@
     </ul>
   </section>
 
+  <!-- Work/Study만 그리드 -->
   <section class="grid">
-
-    <article id="work" class="card">
+    <article id="work" class="card reveal" data-section>
       <h3>💼 Work Timeline</h3>
       <p>금융업 종사자<br>(2017.05.02 ~ ing)</p>
     </article>
 
-    <article id="study" class="card">
+    <article id="study" class="card reveal" data-section>
       <h3>📚 Study Timeline</h3>
       <ul class="list-inside">
         <li>상업고등학교 졸업</li>
@@ -73,44 +114,40 @@
         <li>성균관대학교(대학원) 과학수사 전공 준비중</li>
       </ul>
     </article>
+  </section>
 
-    <article class="card">
-      <h3>🗂 주요 업무</h3>
-      <ul class="list-inside">
-        <li>보이스피싱 전담</li>
-        <li>창구</li>
-        <li>총무</li>
-        <li>회계 / 재무</li>
-        <li>예산수립 및 집행</li>
-        <li>디자인</li>
-        <li>이벤트 및 행사 기획·진행</li>
-        <li>컨설팅</li>
-      </ul>
-    </article>
+  <!-- 가로 섹션(스크롤 등장 + 모바일 카드화 + 아이콘 랜덤) -->
+  <section id="tasks" class="card wide reveal" data-section>
+    <h2>🗂 주요 업무</h2>
+    <ul class="tagline icon-random">
+      <li>보이스피싱 전담</li>
+      <li>창구</li>
+      <li>총무</li>
+      <li>회계 / 재무</li>
+      <li>예산수립 및 집행</li>
+      <li>디자인</li>
+      <li>이벤트 및 행사 기획·진행</li>
+      <li>컨설팅</li>
+    </ul>
+  </section>
 
-    <article class="card">
-      <h3>💡 주요 관심사</h3>
-      <ul class="list-inside">
-        <li>빅데이터</li>
-        <li>정보보안</li>
-        <li>포렌식</li>
-        <li>해킹</li>
-        <li>과학수사</li>
-        <li>경찰</li>
-        <li>형법 / 형소법</li>
-      </ul>
-    </article>
+  <section id="interests" class="card wide reveal" data-section>
+    <h2>💡 주요 관심사</h2>
+    <ul class="tagline icon-random">
+      <li>빅데이터</li>
+      <li>정보보안</li>
+      <li>포렌식</li>
+      <li>해킹</li>
+      <li>과학수사</li>
+      <li>경찰</li>
+      <li>형법 / 형소법</li>
+    </ul>
+  </section>
 
-    <article id="project" class="card highlight">
-      <h3>🚀 Project (과제제출건)</h3>
-      <a class="project-link" href="https://chatgpt.com/g/g-XXXXXXXX" target="_blank">
-        배가 G.P.T
-      </a>
-      <p class="small">
-        분위기, 장소, 사람, 알러지 등을 고려한 음식 추천
-      </p>
-    </article>
-
+  <section id="project" class="card wide highlight reveal" data-section>
+    <h2>🚀 Project (과제제출건)</h2>
+    <a class="project-link" href="https://chatgpt.com/g/g-XXXXXXXX" target="_blank" rel="noreferrer">배가 G.P.T</a>
+    <p class="small">분위기, 장소, 사람, 알러지 등을 고려한 음식 추천</p>
   </section>
 
 </main>
